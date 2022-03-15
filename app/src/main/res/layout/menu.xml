@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/tacos_logo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="50dp">
+
+        <Button
+            android:id="@+id/button_cold_drinks"
+            android:text="Platos"
+            android:textColor="@color/letras"
+            android:backgroundTint="@color/btncolor"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/button_hot_drinks"
+            android:text="Bebidas"
+            android:textColor="@color/letras"
+            android:backgroundTint="@color/btncolor"
+            android:layout_gravity="fill_horizontal"
+            android:layout_columnWeight="1"
+            android:textSize="15sp"/>
+
+
+    </GridLayout>
+</LinearLayout>
