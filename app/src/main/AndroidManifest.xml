@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Examen_U2">
         <activity
+            android:name=".ComidaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductosActivity"
+            android:exported="false" />
+        <activity
             android:name=".Menu_Activity"
             android:exported="false" />
         <activity
