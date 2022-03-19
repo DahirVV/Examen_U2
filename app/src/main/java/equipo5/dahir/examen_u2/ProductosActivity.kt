@@ -1,0 +1,71 @@
+package equipo5.dahir.examen_u2
+
+import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.TextView
+
+class ProductosActivity : AppCompatActivity() {
+    var comidas=ArrayList<Producto>()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_productos)
+
+        agregarProductos()
+
+        var listview: ListView =findViewById(R.id.litview) as ListView
+        var adaptador: AdaptadorProductos=AdaptadorProductos(this,comidas)
+        listview.adapter=adaptador
+    }
+
+    fun agregarProductos(){
+        comidas.add(Producto("Tacos",R.drawable.tacos,"Tacos varios",2.3))
+    }
+
+    private class AdaptadorProductos:BaseAdapter{
+        var productos=ArrayList<Producto>()
+        var contexto: Context?=null
+
+        constructor(context: Context,productos: ArrayList<Producto>){
+        this.productos=productos
+        this.contexto=contexto
+        }
+
+        override fun getCount(): Int {
+            return productos.size
+        }
+
+        override fun getItem(p0: Int): Any {
+            return productos[p0]
+        }
+
+        override fun getItemId(p0: Int): Long {
+            return p0.toLong()
+        }
+
+        override fun getView(p0: Int, convertView: View?, parent: ViewGroup?): View {
+            var prod=productos[p0]
+            var inflador=LayoutInflater.from(contexto)
+            var vista=inflador.inflate(R.layout.producto_view,null)
+
+            var imagen=vista.findViewById(R.id.producto_img) as ImageView
+            var nombre=vista.findViewById(R.id.producto_nombre ) as TextView
+            var desc=vista.findViewById(R.id.producto_desc) as TextView
+            var precio=vista.findViewById(R.id.producto_precio) as TextView
+
+            imagen.setImageResource(prod.image)
+            nombre.setText(prod.name)
+            desc.setText(prod.descripcion)
+            precio.setText("$${prod.precio}")
+            return vista
+        }
+    }
+
+
+}
