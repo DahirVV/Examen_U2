@@ -11,39 +11,38 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 
-class ComidaActivity : AppCompatActivity() {
-
-    var comidas=ArrayList<Producto>()
+class MariscosActivity : AppCompatActivity() {
+    var mariscos=ArrayList<Producto>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comida)
 
-        agregarComidas()
+        agregarMariscos()
 
         var listview: ListView =findViewById(R.id.litview) as ListView
-        var adaptador: AdaptadorProductos=AdaptadorProductos(this,comidas)
+        var adaptador: AdaptadorProductos=AdaptadorProductos(this,mariscos)
         listview.adapter=adaptador
     }
 
-    fun agregarComidas(){
-        comidas.add(Producto("Tacos",R.drawable.tacos,"Tacos varios",2.3))
+    fun agregarMariscos(){
+        mariscos.add(Producto("Tacos",R.drawable.caldomariscos,"Caldo de mariscos",2.3))
     }
 
     private class AdaptadorProductos: BaseAdapter {
-        var comidas=ArrayList<Producto>()
+        var mariscos=ArrayList<Producto>()
         var contexto: Context?=null
 
         constructor(context: Context, productos: ArrayList<Producto>){
-            this.comidas=productos
+            this.mariscos=productos
             this.contexto=contexto
         }
 
         override fun getCount(): Int {
-            return comidas.size
+            return mariscos.size
         }
 
         override fun getItem(p0: Int): Any {
-            return comidas[p0]
+            return mariscos[p0]
         }
 
         override fun getItemId(p0: Int): Long {
@@ -51,7 +50,7 @@ class ComidaActivity : AppCompatActivity() {
         }
 
         override fun getView(p0: Int, convertView: View?, parent: ViewGroup?): View {
-            var prod=comidas[p0]
+            var prod=mariscos[p0]
             var inflador= LayoutInflater.from(contexto)
             var vista=inflador.inflate(R.layout.producto_view,null)
 

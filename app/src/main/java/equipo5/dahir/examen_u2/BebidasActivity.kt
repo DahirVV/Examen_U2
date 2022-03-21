@@ -11,38 +11,40 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 
-class ProductosActivity : AppCompatActivity() {
-    var comidas=ArrayList<Producto>()
+class BebidasActivity : AppCompatActivity() {
+
+    var bebidas=ArrayList<Producto>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_productos)
+        setContentView(R.layout.activity_bebidas)
 
-        agregarProductos()
+        agregarBebidas()
 
         var listview: ListView =findViewById(R.id.litview) as ListView
-        var adaptador: AdaptadorProductos=AdaptadorProductos(this,comidas)
+        var adaptador: AdaptadorProductos=AdaptadorProductos(this,bebidas)
         listview.adapter=adaptador
+
     }
 
-    fun agregarProductos(){
-        comidas.add(Producto("Tacos",R.drawable.tacos,"Tacos varios",2.3))
+    fun agregarBebidas(){
+        bebidas.add(Producto("Tacos",R.drawable.bebida_1,"Bebidas varias",2.3))
     }
 
-    private class AdaptadorProductos:BaseAdapter{
-        var productos=ArrayList<Producto>()
+    private class AdaptadorProductos: BaseAdapter {
+        var bebidas=ArrayList<Producto>()
         var contexto: Context?=null
 
-        constructor(context: Context,productos: ArrayList<Producto>){
-        this.productos=productos
-        this.contexto=contexto
+        constructor(context: Context, productos: ArrayList<Producto>){
+            this.bebidas=productos
+            this.contexto=contexto
         }
 
         override fun getCount(): Int {
-            return productos.size
+            return bebidas.size
         }
 
         override fun getItem(p0: Int): Any {
-            return productos[p0]
+            return bebidas[p0]
         }
 
         override fun getItemId(p0: Int): Long {
@@ -50,8 +52,8 @@ class ProductosActivity : AppCompatActivity() {
         }
 
         override fun getView(p0: Int, convertView: View?, parent: ViewGroup?): View {
-            var prod=productos[p0]
-            var inflador=LayoutInflater.from(contexto)
+            var prod=bebidas[p0]
+            var inflador= LayoutInflater.from(contexto)
             var vista=inflador.inflate(R.layout.producto_view,null)
 
             var imagen=vista.findViewById(R.id.producto_img) as ImageView
@@ -66,6 +68,4 @@ class ProductosActivity : AppCompatActivity() {
             return vista
         }
     }
-
-
 }
