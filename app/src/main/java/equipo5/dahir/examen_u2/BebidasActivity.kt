@@ -27,7 +27,10 @@ class BebidasActivity : AppCompatActivity() {
     }
 
     fun agregarBebidas(){
-        bebidas.add(Producto("Tacos",R.drawable.bebida_1,"Bebidas varias",2.3))
+        bebidas.add(Producto("Bebidas",R.drawable.bebida_1,"Bebidas varias",2.35))
+        bebidas.add(Producto("Bebidas c/alcohol",R.drawable.bebida_2,"Bebidas con alcohol",2.35))
+        bebidas.add(Producto("La mamalona",R.drawable.bebida_3,"Michelada con camarones",12.99))
+        bebidas.add(Producto("MIchelada",R.drawable.michelada,"Micheladas",6.75))
     }
 
     private class AdaptadorProductos: BaseAdapter {

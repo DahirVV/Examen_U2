@@ -25,7 +25,10 @@ class MariscosActivity : AppCompatActivity() {
     }
 
     fun agregarMariscos(){
-        mariscos.add(Producto("Tacos",R.drawable.caldomariscos,"Caldo de mariscos",2.3))
+        mariscos.add(Producto("Caldo de cangrejo",R.drawable.caldomariscos,"Caldo de cangrejo frescos",11.99))
+        mariscos.add(Producto("Sopa de mariscos",R.drawable.caldomariscos,"Sopa de mariscos frescos",15.75))
+        mariscos.add(Producto("Tacos de pescado",R.drawable.tacos2,"Sopa de mariscos frescos",2.35))
+        mariscos.add(Producto("Tostada de ceviche",R.drawable.tostceviche,"Tostada de ceviche de pescado",3.55)
     }
 
     private class AdaptadorProductos: BaseAdapter {

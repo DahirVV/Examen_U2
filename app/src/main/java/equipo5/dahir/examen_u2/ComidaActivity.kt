@@ -26,7 +26,17 @@ class ComidaActivity : AppCompatActivity() {
     }
 
     fun agregarComidas(){
-        comidas.add(Producto("Tacos",R.drawable.tacos,"Tacos varios",2.3))
+        comidas.add(Producto("Tacos",R.drawable.tacos,"Tacos varios",2.35))
+        comidas.add(Producto("Burritos",R.drawable.burritos,"Burritos varios",11.79))
+        comidas.add(Producto("Quesadillas",R.drawable.fajitaquesadilla,"Quesadillas de fajita",12.49))
+        comidas.add(Producto("Huaraches",R.drawable.huarache,"Tortilla gruesa con frijoles",9.87))
+        comidas.add(Producto("Torta",R.drawable.torta,"Tortas varias",10.95))
+        comidas.add(Producto("Torta Cubana",R.drawable.tortacubana,"Torta cubana",12.35))
+        comidas.add(Producto("Caldo de res",R.drawable.caldores,"Caldo de carne de res",5.99))
+        comidas.add(Producto("Pozole",R.drawable.tacos,"Pozole(solo los fines de semana)",5.99))
+        comidas.add(Producto("Menudo",R.drawable.tacos,"Menudo(miercoles a domingo)",5.99))
+        comidas.add(Producto("Extras",R.drawable.salsa_bar,"Salsa con totopos",2.25))
+
     }
 
     private class AdaptadorProductos: BaseAdapter {
