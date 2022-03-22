@@ -37,7 +37,7 @@ class BebidasActivity : AppCompatActivity() {
         var bebidas=ArrayList<Producto>()
         var contexto: Context?=null
 
-        constructor(context: Context, productos: ArrayList<Producto>){
+        constructor(contexto: Context, productos: ArrayList<Producto>){
             this.bebidas=productos
             this.contexto=contexto
         }

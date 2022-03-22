@@ -43,7 +43,7 @@ class ComidaActivity : AppCompatActivity() {
         var comidas=ArrayList<Producto>()
         var contexto: Context?=null
 
-        constructor(context: Context, productos: ArrayList<Producto>){
+        constructor(contexto: Context, productos: ArrayList<Producto>){
             this.comidas=productos
             this.contexto=contexto
         }
